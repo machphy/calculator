@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rajeev calculator</title>
+	<style type="text/css">
+		#calculator {
+			width: 200px;
+			padding: 10px;
+			background-color: #a58585;
+			border: 1px solid #9921bd;
+		}
+	</style>
+</head>
+<body>
+    <h1>rajeev </h1>
+	<div id="calculator">
+		<input type="text" id="result" readonly>
+		<table>
+			<tr>
+				<td><button onclick="addNum(1)">1</button></td>
+				<td><button onclick="addNum(2)">2</button></td>
+				<td><button onclick="addNum(3)">3</button></td>
+				<td><button onclick="addOperator('+')">+</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="addNum(4)">4</button></td>
+				<td><button onclick="addNum(5)">5</button></td>
+				<td><button onclick="addNum(6)">6</button></td>
+				<td><button onclick="addOperator('-')">-</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="addNum(7)">7</button></td>
+				<td><button onclick="addNum(8)">8</button></td>
+				<td><button onclick="addNum(9)">9</button></td>
+				<td><button onclick="addOperator('*')">*</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="addNum(0)">0</button></td>
+				<td><button onclick="clearResult()">C</button></td>
+				<td><button onclick="calculate()">=</button></td>
+				<td><button onclick="addOperator('/')">/</button></td>
+			</tr>
+		</table>
+	</div>
+	
+	<script type="text/javascript">
+		var result = document.getElementById("result");
+
+		function addNum(num) {
+			result.value += num;
+		}
+
+		function addOperator(operator) {
+			result.value += operator;
+		}
+
+		function clearResult() {
+			result.value = "";
+		}
+
+		function calculate() {
+			try {
+				result.value = eval(result.value);
+			} catch (error) {
+				result.value = "Error";
+			}
+		}
+	</script>
+</body>
+</html>
